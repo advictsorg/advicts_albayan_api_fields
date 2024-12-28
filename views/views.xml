@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='invoice_tab']" position="after">
+                <page name="invoice_api_tab" string="Invoice Info">
+                    <group string="Student Information" colspan="2">
+                        <field name="student_name"/>
+                        <field name="university_no"/>
+                        <field name="college_name"/>
+                        <field name="department_name"/>
+                        <field name="stage_no"/>
+                        <field name="study_type"/>
+                        <field name="year_study"/>
+                    </group>
+                    <group string="Payment Information" colspan="2">
+                        <field name="receipt_no"/>
+                        <field name="receipt_date"/>
+                        <field name="type_payment"/>
+                        <field name="instrument_no"/>
+                        <field name="instrument_date"/>
+                        <field name="account_name"/>
+                    </group>
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+    <record id="view_account_payment_form_inherit" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <group name="main_group" position="after">
+                <group string="Student Information" colspan="2">
+                    <field name="student_name"/>
+                    <field name="university_no"/>
+                    <field name="college_name"/>
+                    <field name="department_name"/>
+                    <field name="stage_no"/>
+                    <field name="study_type"/>
+                    <field name="year_study"/>
+                </group>
+                <group string="Payment Information" colspan="2">
+                    <field name="receipt_no"/>
+                    <field name="receipt_date"/>
+                    <field name="type_payment"/>
+                    <field name="instrument_no"/>
+                    <field name="instrument_date"/>
+                    <field name="account_name"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
